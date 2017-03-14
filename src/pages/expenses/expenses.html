@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Expenses
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-fab top right edge>
+    <button class="float-right" (click)="showPromptAddExpense()" ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <button ion-fab mini><ion-icon name="reorder"></ion-icon></button>
+  </ion-fab>
+
+  <ion-list>
+
+    <ion-item></ion-item>
+    <ion-item>
+      <span>TOTAL</span>
+      <span item-right><strong>{{sumExpenses}}</strong></span>
+      <button ion-button clear item-right><ion-icon name="calculator"></ion-icon></button>
+    </ion-item>
+
+    <ion-item *ngFor="let expense of expenses">
+      <span>{{expense.detail}} </span>
+      <span item-right>{{expense.value}}</span>
+      <button (click)="showPromptEditExpense(expense)" ion-button clear item-right><ion-icon name="create"></ion-icon></button>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(loginPage)">
+        Login
+      </button>
+      <button ion-item (click)="openPage(signupPage)">
+        Signup
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

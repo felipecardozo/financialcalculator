@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to your Financials !</h2>
+  <h5>Hi There, is your first time here?</h5>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" floating>Click here to create an account</ion-label>
+      <ion-input [(ngModel)]="idAccount" ></ion-input>
+      
+    </ion-item>
+  </ion-list>
+  <button ion-button round outline (click)="goToExpenses()">Create an account</button>
+
+</ion-content>
