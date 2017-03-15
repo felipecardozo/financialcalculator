@@ -6,6 +6,7 @@ export class FinancialService{
 
     idAccount:String;
     expenses: Array<Expenses>;
+    currentMonth: String;
 
     constructor(){
         this.idAccount = "";

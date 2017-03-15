@@ -1,32 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      
+        {{year}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
 
-<ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <button ion-item (click)="openPage(loginPage)">
-        Login
-      </button>
-      <button ion-item (click)="openPage(signupPage)">
-        Signup
-      </button>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-
-<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
-  
+  <ion-list inset>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      <span *ngIf="month != item" >{{ item }}</span>
+      <span *ngIf="month === item" ><strong>{{item}}</strong></span>
+  </button>
+  </ion-list>
 
 </ion-content>
