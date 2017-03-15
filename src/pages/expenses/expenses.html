@@ -10,7 +10,9 @@
 
 
   <ion-fab top right edge>
-    <button class="float-right" (click)="showPromptAddExpense()" ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <button class="float-right" (click)="showPromptAddExpense()" ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
     <button ion-fab mini><ion-icon name="reorder"></ion-icon></button>
   </ion-fab>
 
@@ -26,7 +28,9 @@
     <ion-item *ngFor="let expense of expenses">
       <span>{{expense.detail}} </span>
       <span item-right>{{expense.value}}</span>
-      <button (click)="showPromptEditExpense(expense)" ion-button clear item-right><ion-icon name="create"></ion-icon></button>
+      <button (click)="showPromptEditExpense(expense)" ion-button clear item-right>
+        <ion-icon name="create"></ion-icon>
+      </button>
     </ion-item>
 
   </ion-list>

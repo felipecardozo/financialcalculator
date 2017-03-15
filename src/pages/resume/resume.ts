@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { FinancialService } from '../../app/services/financial.service';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -8,7 +8,7 @@ import { NavController } from 'ionic-angular';
 })
 export class ResumePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private financialService:FinancialService) {
 
   }
 
