@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Overview March
+      Overview {{month}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -40,7 +40,7 @@
 
     <ion-item>
       <ion-icon name='alert' class="color-yellow" item-left></ion-icon>
-        Can Spend
+      Can Spend
       <ion-note style="color: black" item-right>
         <ion-icon name='logo-euro' style="color: lightgrey"></ion-icon> 500.00
       </ion-note>
@@ -48,18 +48,19 @@
 
     <ion-item>
       <ion-icon name='alert' class="color-green" item-left></ion-icon>
-        Goal Save
+      Goal Save
       <ion-note style="color: black" item-right>
         <ion-icon name='logo-euro' style="color: lightgrey"></ion-icon> 700.00
       </ion-note>
     </ion-item>
 
-  </ion-list>
-
-  
-  <button ion-button (click)="pushPage()">
-       Go to OtherPage
+    <ion-item>
+      <button ion-button (click)="pushPage()">
+       Change month
      </button>
+    </ion-item>
+
+  </ion-list>
 
 
 </ion-content>

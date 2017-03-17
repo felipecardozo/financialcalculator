@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { FinancialService } from '../../app/services/financial.service';
 import { NavController } from 'ionic-angular';
-import { MonthsPage } from '../months/months';
+import { MonthsRadioPage } from '../monthsradio/monthsradio';
+import { Util } from '../../app/util/util';
 
 @Component({
   selector: 'resume',
@@ -10,18 +11,22 @@ import { MonthsPage } from '../months/months';
 export class ResumePage {
 
   @ViewChild('myNav') nav: NavController;
-  month:String;
+  month: String;
   rootPage: any = ResumePage;
+  item :any;
 
-  constructor(public navCtrl: NavController, private financialService:FinancialService) {
+  constructor(public navCtrl: NavController, private financialService: FinancialService) {
+    if( this.financialService.currentMonth ){
+      this.month = this.financialService.currentMonth;
+    }else {
+      let date = new Date();
+      this.month = Util.months[date.getMonth()];
+    }
     
   }
 
-  pushPage(){
-    // push another page on to the navigation stack
-    // causing the nav controller to transition to the new page
-    // optional data can also be passed to the pushed page.
-    this.navCtrl.push(MonthsPage, {
+  pushPage() {
+    this.navCtrl.push(MonthsRadioPage, {
       month: this.financialService.currentMonth
     });
   }

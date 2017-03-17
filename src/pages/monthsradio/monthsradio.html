@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Select a month
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      Change month
+    </ion-list-header>
+
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      <span *ngIf="month != item" >{{ item }}</span>
+      <span *ngIf="month === item" ><strong>{{item}}</strong></span>
+    </button>
+
+  </ion-list>
+
+</ion-content>
